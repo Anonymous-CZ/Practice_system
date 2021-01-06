@@ -14,6 +14,7 @@
 					</div>
 					<button class="bbutton" @click="login">登录</button>
 				</div>
+				
 				<div class="big-contain" v-else>
 					<div class="btitle">创建账户</div>
 					<div class="bform">
