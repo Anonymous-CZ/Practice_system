@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Generetor" content="HBuilter X">
+		<meta name="Author" content="陈增180350210">
+		<meta name="robots" content="Web前端开发，HTML，CSS，JS">
+		<!-- 引入 Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<!--  -->
+		<link rel="stylesheet" type="text/css" href="css/practice.css"/>
+		<title>练习</title>
+	</head>
+	<body>
+		<!-- 导航栏 响应式-->
+		<nav class="navbar navbar-default" role="navigation">
+		    <div class="container-fluid mar-lr-max"> 
+		    <div class="navbar-header ">
+		        <button type="button" class="navbar-toggle pad-tb-big" data-toggle="collapse"
+		                data-target="#example-navbar-collapse">
+		            <span class="sr-only">切换导航</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand pad-lr-max size-weight-big" href="#">练习系统</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+		        <ul class="nav navbar-nav navbar-right pad-lr-max">
+		            <li class="size-weight-big"><a href="#">考试系统</a></li>
+		            <li class="active size-weight-big"><a href="#">个人中心</a></li>
+		            
+		        </ul>
+		    </div>
+		    </div>
+		</nav>
+		
+		<div class="pad-lr-max mar-lr-max">
+			<div class="panel panel-danger">
+				<div class="panel-heading size-large size-weight-big">JAVA</div>
+				<div class="panel-body">
+					<p>仅供练习使用，点击选择，模态框可以通过ESC或点击空白处退出
+					</p>
+				</div>
+				<ul class="list-group size-weight-big">
+					<li class="list-group-item bg-color-1" data-toggle="modal" data-target="#subjective">主观题练习 <ul class="float-r">更新日期：2020-10-5</ul></li>
+					
+					<li class="list-group-item bg-color-2" data-toggle="modal" data-target="#Objective">客观题练习<ul class="float-r">更新日期：2020-10-5</ul></li>
+					<li class="list-group-item bg-color-3" data-toggle="modal" data-target="#chapter">章节练习<ul class="float-r">更新日期：2020-10-5</ul></li>
+					<li class="list-group-item bg-color-4" data-toggle="modal" data-target="#test">模拟考试<ul class="float-r">更新日期：2020-10-5</ul></li>
+				</ul>
+				<!-- 模态框（Modal）主观题 -->
+				<div class="modal fade" id="subjective" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+										aria-hidden="true">×
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									选择章节及试卷难度（可多选）
+								</h4>
+							</div>
+							<div class="modal-body">
+								<ul class="list-group size-weight-big">
+									<li class="list-group-item " >第一章 Java语言概述 
+										<ul class="float-r"><input type="checkbox" name="j1" id="j1" value="j1" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									
+									<li class="list-group-item ">第二章
+										<ul class="float-r"><input type="checkbox" name="j2" id="j2" value="j2" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第三章
+										<ul class="float-r"><input type="checkbox" name="j3" id="j3" value="j3" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第四章
+										<ul class="float-r"><input type="checkbox" name="j4" id="j4" value="j4" style="width: 15px;height: 15px;"/></ul>
+									</li>
+								</ul>
+							</div>
+							<div class="modal-footer">
+								<!-- 下拉框 -->
+								<form class="float-l" style="margin-top: 30px;"  action="#" method="">
+								<select class="size-middle size-weight-big" onchange="changeimg()" id="select">
+									<option value ="1">简单</option>
+									<option value ="2">容易</option>
+									<option value ="3">困难</option>
+								</select></form><br>
+
+								<!-- 生成试卷 -->
+								<button type="button" class="btn btn-primary">
+									开始练习
+								</button>
+								
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				<!-- 客观题 -->
+				<div class="modal fade" id="Objective" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+										aria-hidden="true">×
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									选择章节及试卷难度（可多选）
+								</h4>
+							</div>
+							<div class="modal-body">
+								<ul class="list-group size-weight-big">
+									<li class="list-group-item " >第一章 Java语言概述 
+										<ul class="float-r"><input type="checkbox" name="j1" id="j1" value="j1" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									
+									<li class="list-group-item ">第二章
+										<ul class="float-r"><input type="checkbox" name="j2" id="j2" value="j2" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第三章
+										<ul class="float-r"><input type="checkbox" name="j3" id="j3" value="j3" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第四章
+										<ul class="float-r"><input type="checkbox" name="j4" id="j4" value="j4" style="width: 15px;height: 15px;"/></ul>
+									</li>
+								</ul>
+							</div>
+							<div class="modal-footer">
+								<!-- 下拉框 -->
+								<form class="float-l" style="margin-top: 30px;"  action="#" method="">
+								<select class="size-middle size-weight-big" onchange="changeimg()" id="select">
+									<option value ="1">简单</option>
+									<option value ="2">容易</option>
+									<option value ="3">困难</option>
+								</select></form><br>
+				
+								<!-- 生成试卷 -->
+								<button type="button" class="btn btn-primary">
+									开始练习
+								</button>
+								
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				<!-- 章节练习 -->
+				<div class="modal fade" id="chapter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+										aria-hidden="true">×
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									选择章节及试卷难度（可多选）
+								</h4>
+							</div>
+							<div class="modal-body">
+								<ul class="list-group size-weight-big">
+									<li class="list-group-item " >第一章 Java语言概述 
+										<ul class="float-r"><input type="checkbox" name="j1" id="j1" value="j1" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									
+									<li class="list-group-item ">第二章
+										<ul class="float-r"><input type="checkbox" name="j2" id="j2" value="j2" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第三章
+										<ul class="float-r"><input type="checkbox" name="j3" id="j3" value="j3" style="width: 15px;height: 15px;"/></ul>
+									</li>
+									<li class="list-group-item ">第四章
+										<ul class="float-r"><input type="checkbox" name="j4" id="j4" value="j4" style="width: 15px;height: 15px;"/></ul>
+									</li>
+								</ul>
+							</div>
+							<div class="modal-footer">
+								<!-- 下拉框 -->
+								<form class="float-l" style="margin-top: 30px;"  action="#" method="">
+								<select class="size-middle size-weight-big" onchange="changeimg()" id="select">
+									<option value ="1">简单</option>
+									<option value ="2">容易</option>
+									<option value ="3">困难</option>
+								</select></form><br>
+				
+								<!-- 生成试卷 -->
+								<button type="button" class="btn btn-primary">
+									开始练习
+								</button>
+								
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+				<!-- 模拟考试 -->
+				<div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+										aria-hidden="true">×
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									是否开始模拟考试
+								</h4>
+							</div>
+							<div class="modal-body">
+								按下 ESC 按钮退出。
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" 
+										data-dismiss="modal">关闭
+								</button>
+								<button type="button" class="btn btn-primary">
+									确认
+								</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+			</div>
+
+		</div>
+		
+		
+		
+		
+		<script src="js/practive.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入 Bootstrap -->
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
