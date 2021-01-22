@@ -84,12 +84,14 @@
 							case 0: 
 								// alert("登陆成功！");
 								if(self.form.useremail == 'admin'){
-									this.$router.push('/src/views/admin.vue')
+									self.setCookie(self.form.useremail, self.form.userpwd, 3);
+									self.$router.push('/src/views/admin.vue');
+									
 								}else if(self.form.useremail == 'test'){
-									this.$router.push('/src/views/test.vue')
+									self.$router.push('/src/views/test.vue');
 								}else {
-									this.userInformation();
-									// this.$router.push('/src/views/home.vue')
+									self.userInformation();
+									// self.$router.push('/src/views/home.vue')
 
 								}
 								break;
@@ -109,6 +111,15 @@
 					alert("填写不能为空！");
 				}
 			},
+			//设置cookie
+			//账号，密码，保存的时间
+            setCookie(c_name, c_pwd, exdays) {
+                var exdate = new Date(); //获取时间
+                exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays); //保存的天数
+                //字符串拼接cookie
+                window.document.cookie = "username" + "=" + c_name + ";path=/;expires=" + exdate.toGMTString();//账号
+                // window.document.cookie = "userpwd" + "=" + c_pwd + ";path=/;expires=" + exdate.toGMTString();//密码
+            },
 			register(){//注册
 				const self = this;
 				if(self.form.username != "" && self.form.useremail != "" && self.form.userpwd != ""){
